@@ -3,8 +3,6 @@ extends CharacterBody3D
 const mix_view : float = -PI/2
 const max_view : float = PI/2
 
-var test1
-
 var mouseRotation : Vector2 = Vector2.ZERO
 
 var GUIVISIBLE : bool = true
