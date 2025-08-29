@@ -11,7 +11,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-func leftClick():
+func left_click():
 	#print_debug("wood Left Click")
 	#print_debug(player)
 	if !player.haveLog:

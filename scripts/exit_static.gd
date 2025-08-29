@@ -11,5 +11,5 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-func leftClick():
+func left_click():
 	get_tree().quit()

@@ -3,9 +3,7 @@ extends CharacterBody3D
 const mix_view : float = -PI/2
 const max_view : float = PI/2
 
-var mouseRotation : Vector2 = Vector2.ZERO
-
-var GUIVISIBLE : bool = true
+var mouse_rotation : Vector2 = Vector2.ZERO
 
 const JUMP_VELOCITY : int = 5
 
@@ -15,8 +13,6 @@ var gravity : float = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 @onready var snow_walk: AudioStreamPlayer = %SnowWalk
 @onready var snow_timer: Timer = %SnowTimer
-
-var haveLog : bool = false
 
 @export var MainNode : Node
 
@@ -28,7 +24,7 @@ func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	
 	var window_size = DisplayServer.window_get_size()
-	lastMousePosition = window_size/2
+	last_mouse_position = window_size/2
 	
 	await MainNode.ready
 	print_debug(MainNode.load_bus)
@@ -42,32 +38,23 @@ func _ready():
 	
 var action_object = null
 
-func actionLeft():
-	actionLeftCursor(PlayerRayCast.get_collider())
-
-func actionRight():
-	actionRightCursor(PlayerRayCast.get_collider())
-
-func actionLeftCursor(action_object):
+func mouse_action_object(action_object, mouse_button):
 	#print_debug(PlayerRayCast)
 	#action_object = PlayerRayCast.get_collider()
 	if action_object != null:
-		#print_debug(action_object.name, "\tclick")
-		if action_object.get_meta("LeftClick") == true:
-			#print_debug("object have meta leftClick")
-			action_object.leftClick()
+		if mouse_button == "left_mouse_button" && action_object.get_meta("left_click") == true:
+			#print_debug(action_object.name, "\tclick")
+			#print_debug("object have meta left_click")
+			action_object.left_click()
+		elif mouse_button == "right_mouse_button" && action_object.get_meta("right_click") == true:
+			#print_debug("object have meta right_click")
+			action_object.right_click()
 		
-func actionRightCursor(action_object):
-	if action_object != null:
-		#print_debug(action_object.name, "\tclick")
-		if action_object.get_meta("rightClick") == true:
-			#print_debug("object have meta rightClick")
-			action_object.rightClick()
 
 var Flash : bool = true
 
-var tempFloor
-var tempFloor2
+var check_on_floor
+var check_on_floor2
 
 var escape : bool = false
 
@@ -75,7 +62,7 @@ func _physics_process(delta):
 		
 	if Input.is_action_just_pressed("left_mouse_button_click"):
 		var collider
-		if !showCursor:
+		if !show_cursor:
 			collider = PlayerRayCast.get_collider()
 		else:
 			if getCursourPos():
@@ -84,11 +71,11 @@ func _physics_process(delta):
 			if collider.get_meta("gui") == true:
 				sprite3d = collider.get_node("guiDisplay")
 				viewport = sprite3d.get_node("SubViewport")
-				clickUI = true
+				click_ui_left = true
 				is_mouse_down_on_viewport = true
-	
+
 	if is_mouse_down_on_viewport:
-		gui3dClickMouse()
+		gui_3d_click_mouse()
 		
 		
 		
@@ -104,19 +91,19 @@ func _physics_process(delta):
 				if MainNode.start:
 					%CampfireStaticBody3D.process_mode = Node.PROCESS_MODE_DISABLED
 				%PlayerLastPos.transform = transform
-				%PlayerLastPos.rotation.x = mouseRotation.x
-				%PlayerLastPos.rotation.y = mouseRotation.y
+				%PlayerLastPos.rotation.x = mouse_rotation.x
+				%PlayerLastPos.rotation.y = mouse_rotation.y
 
 				global_position = %EscapePosition.global_position
 				print_debug(rotation, "\t", %EscapePosition.rotation)
-				mouseRotation.y = %EscapePosition.rotation.y
-				mouseRotation.x = %EscapePosition.rotation.x
+				mouse_rotation.y = %EscapePosition.rotation.y
+				mouse_rotation.x = %EscapePosition.rotation.x
 			else:
 				if MainNode.start:
 					%CampfireStaticBody3D.process_mode = Node.PROCESS_MODE_INHERIT
 				transform = %PlayerLastPos.transform
-				mouseRotation.y = %PlayerLastPos.rotation.y
-				mouseRotation.x = %PlayerLastPos.rotation.x
+				mouse_rotation.y = %PlayerLastPos.rotation.y
+				mouse_rotation.x = %PlayerLastPos.rotation.x
 			escape = !escape
 	
 	if Input.is_action_just_pressed("enter"):
@@ -131,16 +118,16 @@ func _physics_process(delta):
 	
 	
 	if mouse_click_left == true:
-		mouseClick("left")
+		mouse_click("left_mouse_button")
 		mouse_click_left = false
-	elif mouse_click_right == true:
-		mouseClick("right")
+	if mouse_click_right == true:
+		mouse_click("right")
 		mouse_click_right = false
 	
-	tempFloor = tempFloor2
-	tempFloor2 = is_on_floor()
+	check_on_floor = check_on_floor2
+	check_on_floor2 = is_on_floor()
 	
-	if is_on_floor() && tempFloor == false && tempFloor2 == true:
+	if is_on_floor() && check_on_floor == false && check_on_floor2 == true:
 		#print_debug("приземление")
 		snow_walk.play()
 	
@@ -156,7 +143,7 @@ func _physics_process(delta):
 	if Input.is_action_pressed("shift"):
 		SPEED *= SPEED_UP
 	
-	if canMove:
+	if can_move:
 		var input_dir : Vector2 = Input.get_vector("a", "d", "w", "s")
 		var direction : Vector3 = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 		if direction:
@@ -172,8 +159,8 @@ func _physics_process(delta):
 			velocity.z = move_toward(velocity.z, 0, SPEED)
 		move_and_slide()
 	
-	transform.basis = Basis.from_euler(Vector3(0.0, mouseRotation.y, 0.0))
-	$Head.transform.basis = Basis.from_euler(Vector3(mouseRotation.x, 0.0, 0.0))
+	transform.basis = Basis.from_euler(Vector3(0.0, mouse_rotation.y, 0.0))
+	$Head.transform.basis = Basis.from_euler(Vector3(mouse_rotation.x, 0.0, 0.0))
 
 
 func _input(e : InputEvent) -> void:
@@ -182,30 +169,26 @@ func _input(e : InputEvent) -> void:
 			var focused_control = viewport.gui_get_focus_owner()
 			if focused_control is LineEdit or focused_control is TextEdit:
 				viewport.push_input(e)
-				canMove = false
+				can_move = false
 			else:
-				canMove = true
-	if !showCursor:
+				can_move = true
+	if !show_cursor:
 		if e is InputEventMouseMotion:
-			mouseRotation.x = clamp(mouseRotation.x - e.relative.y * G.Sensivity * G.FixSensivity, mix_view, max_view)
-			mouseRotation.y += -e.relative.x * G.Sensivity * G.FixSensivity
+			mouse_rotation.x = clamp(mouse_rotation.x - e.relative.y * G.Sensivity * G.FixSensivity, mix_view, max_view)
+			mouse_rotation.y += -e.relative.x * G.Sensivity * G.FixSensivity
 		
 		if e is InputEventMouse:
+			var temp_raycast = PlayerRayCast.get_collider()
 			if e.is_action_pressed("left_mouse_button_click"):
-				var temp_raycast = PlayerRayCast.get_collider()
-				if temp_raycast != null: 
-					actionLeftCursor(temp_raycast)
-				#actionLeft()
+				mouse_action_object(temp_raycast,"left_mouse_button")
 			elif e.is_action_pressed("right_mouse_button_click"):
-				actionRight()
-	if showCursor:
+				mouse_action_object(temp_raycast,"right_mouse_button")
+	if show_cursor:
 		if e is InputEventMouse:
 			if e.is_action_pressed("left_mouse_button_click"):
 				mouse_click_left = true
-				#mouseClick(e,"left")
 			elif e.is_action_pressed("right_mouse_button_click"):
 				mouse_click_right = true
-				#mouseClick(e,"right")
 
 @onready var camera_node: Camera3D = %Camera3D
 @onready var player_ray_cast_3d: RayCast3D = %PlayerRayCast3D
@@ -213,36 +196,38 @@ func _input(e : InputEvent) -> void:
 
 @export var collision_masks: int = 3
 
-func mouseClick(mouseButton : String):
+func mouse_click(mouseButton : String):
 	#print_debug(collision_layer)
 	
 	var result = getCursourPos()
 
 	if result:
 		var hit_object = result.collider
-		if mouseButton == "left":
-			actionLeftCursor(hit_object)
+		if mouseButton == "left_mouse_button":
+			mouse_action_object(hit_object, "left_mouse_button")
+		if mouseButton == "right_mouse_button":
+			mouse_action_object(hit_object, "right_mouse_button")
 
-var lastMousePosition: Vector2 = Vector2.ZERO
-var showCursor : bool = false
+var last_mouse_position: Vector2 = Vector2.ZERO
+var show_cursor : bool = false
 func changeMouse():
-	showCursor = !showCursor
-	if showCursor:
+	show_cursor = !show_cursor
+	if show_cursor:
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		Input.warp_mouse(lastMousePosition)
+		Input.warp_mouse(last_mouse_position)
 	else:
-		lastMousePosition = get_viewport().get_mouse_position()
+		last_mouse_position = get_viewport().get_mouse_position()
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 
 
 
-var canMove : bool = true
-var interact_just_released
+var can_move : bool = true
+var interact_just_released_left
 var is_mouse_down_on_viewport = false
 var sprite3d
 var viewport
-var clickUI = false
+var click_ui_left = false
 
 
 func getCursourPos() -> Dictionary:
@@ -260,13 +245,17 @@ func getCursourPos() -> Dictionary:
 
 	return get_world_3d().direct_space_state.intersect_ray(ray_query)
 
-func gui3dClickMouse():
-	interact_just_released = Input.is_action_just_released("left_mouse_button_click")
+
+#DONT ADD RIGHT MOUSE BUTTON FROM RAYCAST ITS DONT WORK
+#RIGHT MOUSE FOR CURSOR WORK WRONG
+
+func gui_3d_click_mouse():
+	interact_just_released_left = Input.is_action_just_released("left_mouse_button_click")
 
 	var hit_point_world
 
 
-	if !showCursor: 
+	if !show_cursor: 
 		hit_point_world = PlayerRayCast.get_collision_point()
 	else:
 		hit_point_world = getCursourPos()["position"]
@@ -283,20 +272,19 @@ func gui3dClickMouse():
 								relative.y * viewport_size.y)
 
 
-	if clickUI:
+	if click_ui_left:
 		var click_event = InputEventMouseButton.new()
 		click_event.button_index = MOUSE_BUTTON_LEFT
 		click_event.pressed = true
 		click_event.position = Vector2(pixel.x, pixel.y)
 		viewport.push_input(click_event)
-		clickUI = false
-
+		click_ui_left = false
 
 	var move_event = InputEventMouseMotion.new()
 	move_event.position = Vector2(pixel.x, pixel.y)
 	viewport.push_input(move_event)
 
-	if interact_just_released:
+	if interact_just_released_left:
 		is_mouse_down_on_viewport = false
 		var release_event = InputEventMouseButton.new()
 		release_event.button_index = MOUSE_BUTTON_LEFT

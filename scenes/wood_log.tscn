@@ -39,7 +39,7 @@ script = ExtResource("2_pfutm")
 
 [node name="WoodLogStatic" type="StaticBody3D" parent="."]
 script = ExtResource("3_7dn70")
-metadata/LeftClick = true
+metadata/left_click = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="WoodLogStatic"]
 shape = SubResource("ConcavePolygonShape3D_pfutm")

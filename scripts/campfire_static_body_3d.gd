@@ -40,7 +40,7 @@ func _process(delta: float) -> void:
 @onready var player = %Player
 @onready var campfire_drop: AudioStreamPlayer3D = %CampfireDrop
 
-func leftClick():
+func left_click():
 	if player.haveLog:
 		fuel+=onePercent*logPercent
 		#print_debug("campfire")
