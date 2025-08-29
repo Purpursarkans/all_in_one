@@ -19,6 +19,8 @@ var gravity : float = ProjectSettings.get_setting("physics/3d/default_gravity")
 var mouse_click_left : bool = false
 var mouse_click_right : bool = false
 
+var have_log : bool = false
+
 func _ready():
 	Engine.time_scale = 1
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -34,19 +36,18 @@ func _ready():
 	
 	global_position = %StartPosition.global_position
 	#global_position = %EscapePosition.global_position
-	
-	
-var action_object = null
+
+
 
 func mouse_action_object(action_object, mouse_button):
 	#print_debug(PlayerRayCast)
 	#action_object = PlayerRayCast.get_collider()
 	if action_object != null:
-		if mouse_button == "left_mouse_button" && action_object.get_meta("left_click") == true:
+		if mouse_button == "left_mouse_button" && action_object.get_meta("left_click", false) == true:
 			#print_debug(action_object.name, "\tclick")
 			#print_debug("object have meta left_click")
 			action_object.left_click()
-		elif mouse_button == "right_mouse_button" && action_object.get_meta("right_click") == true:
+		elif mouse_button == "right_mouse_button" && action_object.get_meta("right_click", false) == true:
 			#print_debug("object have meta right_click")
 			action_object.right_click()
 		
@@ -68,7 +69,7 @@ func _physics_process(delta):
 			if getCursourPos():
 				collider = getCursourPos().collider
 		if collider != null:
-			if collider.get_meta("gui") == true:
+			if collider.get_meta("gui", false) == true:
 				sprite3d = collider.get_node("guiDisplay")
 				viewport = sprite3d.get_node("SubViewport")
 				click_ui_left = true
@@ -84,7 +85,7 @@ func _physics_process(delta):
 		if viewport != null:
 			focused_control = viewport.gui_get_focus_owner()
 		if focused_control != null:
-			print_debug(focused_control)
+			#print_debug(focused_control)
 			focused_control.release_focus()
 		else:
 			if !escape:

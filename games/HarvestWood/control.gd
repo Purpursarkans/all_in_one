@@ -58,7 +58,7 @@ func _on_vsync_pressed() -> void:
 	vsync = !vsync
 
 
-func _on_spin_fps_value_changed(value: float) -> void:
+func _on_spin_fps_value_changed(value: int) -> void:
 	Engine.max_fps = value
 
 

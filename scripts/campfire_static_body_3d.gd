@@ -33,7 +33,7 @@ func _process(delta: float) -> void:
 		%Time.text = "you time: " + str(int(totalSec)) + " sec"
 		%Time2.text = "you time: " + str(int(totalSec)) + " sec"
 		player.global_position = %GameOverPosition.global_position
-		player.haveLog = false
+		player.have_log = false
 		player.get_node("WoodLog").hide()
 		process_mode = Node.PROCESS_MODE_DISABLED
 
@@ -41,10 +41,10 @@ func _process(delta: float) -> void:
 @onready var campfire_drop: AudioStreamPlayer3D = %CampfireDrop
 
 func left_click():
-	if player.haveLog:
+	if player.have_log:
 		fuel+=onePercent*logPercent
 		#print_debug("campfire")
-		player.haveLog = false
+		player.have_log = false
 		player.get_node("WoodLog").hide()
 		campfire_drop.play()
 		if fuel > maxFuel:

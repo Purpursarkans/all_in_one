@@ -14,8 +14,8 @@ func _process(delta: float) -> void:
 func left_click():
 	#print_debug("wood Left Click")
 	#print_debug(player)
-	if !player.haveLog:
-		player.haveLog = true
+	if !player.have_log:
+		player.have_log = true
 		player.get_node("WoodLog").show()
 		get_parent().get_parent().remove_child(get_parent())
 		get_parent().queue_free()
