@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://ncrpi2p3jiow"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q82cy"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3ru4t"]
+bg_color = Color(2.21401e-06, 0.72018, 0.330338, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[node name="fuelBar" type="ProgressBar"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_q82cy")
+theme_override_styles/fill = SubResource("StyleBoxFlat_3ru4t")
+value = 30.0
+show_percentage = false

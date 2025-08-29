@@ -1,0 +1,117 @@
+[gd_scene load_steps=13 format=3 uid="uid://clqt4e6td41ou"]
+
+[ext_resource type="Script" uid="uid://bo32owd7t7cbn" path="res://games/test/car.gd" id="1_kxibf"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_e7akk"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e7akk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gucrg"]
+uv1_triplanar = true
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ux0nn"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_va6cm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kxibf"]
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_va6cm"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_va6cm"]
+data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_e7akk"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_va6cm"]
+sky_material = SubResource("ProceduralSkyMaterial_e7akk")
+
+[sub_resource type="Environment" id="Environment_kxibf"]
+background_mode = 2
+sky = SubResource("Sky_va6cm")
+tonemap_mode = 2
+
+[node name="Main" type="Node3D"]
+
+[node name="VehicleBody3D" type="VehicleBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mass = 2000.0
+script = ExtResource("1_kxibf")
+ENGINE_POWER = 3500
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="VehicleBody3D"]
+transform = Transform3D(0.653307, 0, 0, 0, 0.57324, 0, 0, 0, 1.85521, 0, 0, 0)
+mesh = SubResource("BoxMesh_e7akk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="VehicleBody3D"]
+transform = Transform3D(0.642495, 0, 0, 0, 0.579033, 0, 0, 0, 1.83696, 0, 0, 0)
+shape = SubResource("BoxShape3D_e7akk")
+
+[node name="VehicleWheel3D" type="VehicleWheel3D" parent="VehicleBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.457046, 0, -0.754525)
+use_as_traction = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="VehicleBody3D/VehicleWheel3D"]
+transform = Transform3D(-4.40813e-08, 0.0736855, 0, -1.00846, -3.22089e-09, 0, 0, 0, 1.00846, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_gucrg")
+mesh = SubResource("CylinderMesh_ux0nn")
+
+[node name="VehicleWheel3D2" type="VehicleWheel3D" parent="VehicleBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.457046, 0, 0.795216)
+use_as_traction = true
+use_as_steering = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="VehicleBody3D/VehicleWheel3D2"]
+transform = Transform3D(-4.40813e-08, 0.0736855, 0, -1.00846, -3.22089e-09, 0, 0, 0, 1.00846, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_gucrg")
+mesh = SubResource("CylinderMesh_ux0nn")
+
+[node name="VehicleWheel3D3" type="VehicleWheel3D" parent="VehicleBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.510788, 0, -0.754525)
+use_as_traction = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="VehicleBody3D/VehicleWheel3D3"]
+transform = Transform3D(-4.40813e-08, 0.0736855, 0, -1.00846, -3.22089e-09, 0, 0, 0, 1.00846, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_gucrg")
+mesh = SubResource("CylinderMesh_ux0nn")
+
+[node name="VehicleWheel3D4" type="VehicleWheel3D" parent="VehicleBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.510788, 0, 0.795216)
+use_as_traction = true
+use_as_steering = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="VehicleBody3D/VehicleWheel3D4"]
+transform = Transform3D(-4.40813e-08, 0.0736855, 0, -1.00846, -3.22089e-09, 0, 0, 0, 1.00846, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_gucrg")
+mesh = SubResource("CylinderMesh_ux0nn")
+
+[node name="Camera3D" type="Camera3D" parent="VehicleBody3D"]
+transform = Transform3D(-1, 4.02606e-15, -8.74228e-08, -5.45759e-08, 0.781205, 0.624275, 6.82951e-08, 0.624275, -0.781205, 0, 1.51528, -1.85368)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="VehicleBody3D"]
+transform = Transform3D(0.642371, 0, 0, 0, -4.37114e-08, -0.780645, 0, 1, -3.41231e-08, 0, 0.137084, -0.429757)
+mesh = SubResource("PrismMesh_va6cm")
+
+[node name="Speedometor" type="Label" parent="VehicleBody3D"]
+unique_name_in_owner = true
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="floor" type="MeshInstance3D" parent="."]
+transform = Transform3D(108.874, 0, 0, 0, 108.874, 0, 0, 0, 108.874, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_kxibf")
+mesh = SubResource("PlaneMesh_va6cm")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="floor"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_va6cm")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_kxibf")

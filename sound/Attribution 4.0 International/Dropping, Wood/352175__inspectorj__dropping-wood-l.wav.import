@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dmsepr7e3wucf"
+path="res://.godot/imported/352175__inspectorj__dropping-wood-l.wav-e43cc0b3f42bee8f59d83f964e6f7394.sample"
+
+[deps]
+
+source_file="res://sound/Attribution 4.0 International/Dropping, Wood/352175__inspectorj__dropping-wood-l.wav"
+dest_files=["res://.godot/imported/352175__inspectorj__dropping-wood-l.wav-e43cc0b3f42bee8f59d83f964e6f7394.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

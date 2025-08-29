@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bx0v6jsh62r7l"
+path="res://.godot/imported/PickUpLog.ogg-7a07e0d414242b41394b6093b6144742.oggvorbisstr"
+
+[deps]
+
+source_file="res://sound/CC0 1.0 Universal/SFX_wood_fall_pile_bunch_stone_floor/PickUpLog.ogg"
+dest_files=["res://.godot/imported/PickUpLog.ogg-7a07e0d414242b41394b6093b6144742.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

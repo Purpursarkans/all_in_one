@@ -1,0 +1,21 @@
+[gd_resource type="Shader" format=3 uid="uid://drpk7lx8k7e16"]
+
+[resource]
+code = "shader_type spatial;
+render_mode blend_mix, cull_front, unshaded;
+uniform vec4 outline_color : source_color = vec4(0.602, 0, 0.557, 1.0);
+uniform float outline_size : hint_range(1.0, 1.5, 0.01) = 1.03;
+uniform bool outline_enabled = false;
+
+void vertex() {
+    VERTEX *= outline_size;
+}
+
+void fragment() {
+    if (outline_enabled) {
+        ALBEDO = outline_color.rgb;
+        ALPHA = outline_color.a;
+    } else {
+        ALPHA = 0.0;
+    }
+}"

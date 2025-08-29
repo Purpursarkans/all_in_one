@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://toqg5hefuam"
+path="res://.godot/imported/801813__sadiquecat__picking-up-a-log-from-a-pile-xy.wav-87e808ac287327ce179a16f67f61ae5d.sample"
+
+[deps]
+
+source_file="res://sound/CC0 1.0 Universal/Picking up a log from a pile/801813__sadiquecat__picking-up-a-log-from-a-pile-xy.wav"
+dest_files=["res://.godot/imported/801813__sadiquecat__picking-up-a-log-from-a-pile-xy.wav-87e808ac287327ce179a16f67f61ae5d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

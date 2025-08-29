@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://ss34e3i1oghs"]
+
+[ext_resource type="Texture2D" uid="uid://cmwg6owdj7k2i" path="res://textures/CC0 1.0 Universal/Dark Wood/Holz Dark Seamless.jpg" id="1_7k2wp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pfutm"]
+albedo_texture = ExtResource("1_7k2wp")
+
+[sub_resource type="BoxMesh" id="BoxMesh_7dn70"]
+
+[node name="woodLogCampfire" type="MeshInstance3D"]
+transform = Transform3D(0.48594, 0, 0, 0, 0.224015, 0.707107, 0, -0.224015, 0.707107, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_pfutm")
+mesh = SubResource("BoxMesh_7dn70")
+skeleton = NodePath("../..")
