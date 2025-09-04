@@ -113,9 +113,27 @@ func _physics_process(delta):
 			focused_control = viewport.gui_get_focus_owner()
 		if focused_control != null:
 			focused_control.release_focus()
-
-	if Input.is_action_just_pressed("e"):
-		changeMouse()
+	
+	##show cursor if alt pressed
+	#if Input.is_action_just_pressed("show_cursor"):
+		#show_cursor = true
+		#Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		#Input.warp_mouse(last_mouse_position)
+	#if Input.is_action_just_released("show_cursor"):
+		#show_cursor = false
+		#last_mouse_position = get_viewport().get_mouse_position()
+		#Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	##toggle corsor 
+	
+	if Input.is_action_just_pressed("show_cursor"):
+		show_cursor = !show_cursor
+		if show_cursor:
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+			Input.warp_mouse(last_mouse_position)
+		else:
+			last_mouse_position = get_viewport().get_mouse_position()
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	
 	
 	
 	if mouse_click_left == true:
@@ -211,14 +229,7 @@ func mouse_click(mouseButton : String):
 
 var last_mouse_position: Vector2 = Vector2.ZERO
 var show_cursor : bool = false
-func changeMouse():
-	show_cursor = !show_cursor
-	if show_cursor:
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		Input.warp_mouse(last_mouse_position)
-	else:
-		last_mouse_position = get_viewport().get_mouse_position()
-		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	
 
 
 
@@ -255,12 +266,20 @@ func gui_3d_click_mouse():
 
 	var hit_point_world
 
-
 	if !show_cursor: 
 		hit_point_world = PlayerRayCast.get_collision_point()
 	else:
-		hit_point_world = getCursourPos()["position"]
-
+		var temp_dict = getCursourPos()
+		if temp_dict:
+			hit_point_world = temp_dict["position"]
+		else:
+			is_mouse_down_on_viewport = false
+			var release_event = InputEventMouseButton.new()
+			release_event.button_index = MOUSE_BUTTON_LEFT
+			release_event.pressed = false
+			viewport.push_input(release_event)
+			return
+	
 	var hit_point_local_sprite3d = sprite3d.global_transform.affine_inverse() * hit_point_world
 	var viewport_size = viewport.size
 	var sprite_size = sprite3d.get_aabb().size
