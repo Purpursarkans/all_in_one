@@ -1,0 +1,264 @@
+[gd_scene load_steps=16 format=3 uid="uid://bjs8oxs6clnfh"]
+
+[ext_resource type="Script" uid="uid://1t18i5tqlymc" path="res://games/HarvestWood/control.gd" id="1_260xq"]
+[ext_resource type="SystemFont" uid="uid://bpi05ko24khtx" path="res://new_system_font.tres" id="2_v8t2n"]
+[ext_resource type="ButtonGroup" uid="uid://d27t08357rn0u" path="res://games/HarvestWood/ScreenButtonGroups.tres" id="3_s013t"]
+[ext_resource type="AudioStream" uid="uid://b4jktspbqhy28" path="res://sound/CC BY 3.0/Menu Selection Click/Menu Selection Click.wav" id="4_t1e50"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_bansd"]
+font = ExtResource("2_v8t2n")
+
+[sub_resource type="Theme" id="Theme_q8s4u"]
+default_font = ExtResource("2_v8t2n")
+
+[sub_resource type="SystemFont" id="SystemFont_3d426"]
+font_names = PackedStringArray("Monocraft")
+subpixel_positioning = 0
+multichannel_signed_distance_field = true
+
+[sub_resource type="SystemFont" id="SystemFont_bansd"]
+font_names = PackedStringArray("Monocraft")
+subpixel_positioning = 0
+multichannel_signed_distance_field = true
+
+[sub_resource type="Theme" id="Theme_4nmcf"]
+default_font = SubResource("SystemFont_bansd")
+default_font_size = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_3d426"]
+font = ExtResource("2_v8t2n")
+
+[sub_resource type="Theme" id="Theme_3d426"]
+default_font = ExtResource("2_v8t2n")
+default_font_size = 10
+
+[sub_resource type="Theme" id="Theme_bansd"]
+default_font = ExtResource("2_v8t2n")
+
+[sub_resource type="Theme" id="Theme_3khpe"]
+default_font = ExtResource("2_v8t2n")
+
+[sub_resource type="Theme" id="Theme_sehik"]
+default_font = ExtResource("2_v8t2n")
+default_font_size = 10
+
+[sub_resource type="Theme" id="Theme_winft"]
+default_font = ExtResource("2_v8t2n")
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 537.0
+offset_bottom = 302.0
+scale = Vector2(2.38141, 2.38141)
+script = ExtResource("1_260xq")
+
+[node name="Sensitivity" type="Label" parent="."]
+layout_mode = 0
+offset_left = 11.3378
+offset_top = 10.0781
+offset_right = 129.338
+offset_bottom = 33.0781
+text = "Sensitivity"
+label_settings = SubResource("LabelSettings_bansd")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SpinBox" type="SpinBox" parent="Sensitivity"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_top = 23.0956
+offset_right = 87.0
+offset_bottom = 61.0956
+scale = Vector2(0.5, 0.5)
+theme = SubResource("Theme_q8s4u")
+min_value = 0.01
+max_value = 1e+07
+step = 0.01
+value = 10.0
+
+[node name="HScrollBar" type="HScrollBar" parent="Sensitivity"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 47.0
+offset_top = 23.0956
+offset_right = 180.0
+offset_bottom = 43.0956
+min_value = 0.01
+step = 0.01
+value = 10.0
+
+[node name="applySensitivity" type="Button" parent="Sensitivity"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 94.9018
+offset_top = 46.1911
+offset_right = 136.902
+offset_bottom = 65.1911
+focus_mode = 0
+theme_override_fonts/font = SubResource("SystemFont_3d426")
+theme_override_font_sizes/font_size = 10
+text = "apply"
+
+[node name="autoApply" type="CheckBox" parent="Sensitivity"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -2.93941
+offset_top = 43.6716
+offset_right = 92.0606
+offset_bottom = 67.6716
+focus_mode = 0
+theme = SubResource("Theme_4nmcf")
+text = "auto apply"
+
+[node name="Screen" type="Label" parent="."]
+layout_mode = 0
+offset_left = 11.3378
+offset_top = 80.6245
+offset_right = 129.338
+offset_bottom = 103.625
+text = "Screen"
+label_settings = SubResource("LabelSettings_3d426")
+
+[node name="ExclusiveFullscreen" type="CheckBox" parent="Screen"]
+layout_mode = 0
+offset_left = -2.93944
+offset_top = 16.3769
+offset_right = 239.061
+offset_bottom = 40.3769
+focus_mode = 0
+theme = SubResource("Theme_3d426")
+button_group = ExtResource("3_s013t")
+text = "Exclusive fullscreen"
+
+[node name="WindowFullscreen" type="CheckBox" parent="Screen"]
+layout_mode = 0
+offset_left = -2.93944
+offset_top = 40.3123
+offset_right = 239.061
+offset_bottom = 64.3123
+focus_mode = 0
+theme = SubResource("Theme_3d426")
+button_group = ExtResource("3_s013t")
+text = "Window fullscreen"
+
+[node name="Windowed" type="CheckBox" parent="Screen"]
+layout_mode = 0
+offset_left = -2.93944
+offset_top = 64.2477
+offset_right = 239.061
+offset_bottom = 88.2477
+focus_mode = 0
+theme = SubResource("Theme_3d426")
+button_pressed = true
+keep_pressed_outside = true
+button_group = ExtResource("3_s013t")
+text = "Windowed"
+
+[node name="VSync" type="CheckBox" parent="Screen"]
+layout_mode = 0
+offset_left = -2.93941
+offset_top = 88.183
+offset_right = 21.0606
+offset_bottom = 112.183
+focus_mode = 0
+button_pressed = true
+text = "V-Sync"
+
+[node name="MaxFps" type="Label" parent="."]
+layout_mode = 0
+offset_left = 218.358
+offset_top = 80.6245
+offset_right = 293.358
+offset_bottom = 103.625
+theme = SubResource("Theme_bansd")
+text = "Max Fps"
+
+[node name="SpinFps" type="SpinBox" parent="MaxFps"]
+layout_mode = 0
+offset_left = -3.0
+offset_top = 25.0
+offset_right = 93.0
+offset_bottom = 50.0
+scale = Vector2(0.833306, 0.833306)
+theme = SubResource("Theme_3khpe")
+max_value = 9999.0
+value = 90.0
+rounded = true
+allow_greater = true
+
+[node name="Volume" type="Label" parent="."]
+layout_mode = 0
+offset_left = 215.0
+offset_top = 10.0
+offset_right = 289.0
+offset_bottom = 33.0
+text = "Volume (in dB)"
+label_settings = SubResource("LabelSettings_bansd")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SpinVolume" type="SpinBox" parent="Volume"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_top = 23.0
+offset_right = 101.0
+offset_bottom = 61.0
+scale = Vector2(0.5, 0.5)
+theme = SubResource("Theme_q8s4u")
+min_value = -100.0
+max_value = 10.0
+step = 0.01
+allow_greater = true
+allow_lesser = true
+
+[node name="HScrollVolume" type="HScrollBar" parent="Volume"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 54.0
+offset_top = 23.0
+offset_right = 180.0
+offset_bottom = 43.0
+min_value = -100.0
+max_value = 10.0
+step = 0.01
+allow_greater = true
+allow_lesser = true
+
+[node name="testSound" type="Button" parent="Volume"]
+layout_mode = 0
+offset_left = -0.00130712
+offset_top = 47.109
+offset_right = 74.9987
+offset_bottom = 66.109
+focus_mode = 0
+theme = SubResource("Theme_sehik")
+text = "test sound"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Volume/testSound"]
+unique_name_in_owner = true
+stream = ExtResource("4_t1e50")
+
+[node name="Exit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 339.295
+offset_top = 168.808
+offset_right = 390.295
+offset_bottom = 193.808
+focus_mode = 0
+theme = SubResource("Theme_winft")
+text = "Exit"
+
+[connection signal="value_changed" from="Sensitivity/SpinBox" to="." method="_on_spin_box_value_changed"]
+[connection signal="value_changed" from="Sensitivity/HScrollBar" to="." method="_on_h_scroll_bar_value_changed"]
+[connection signal="button_down" from="Sensitivity/applySensitivity" to="." method="_on_apply_sensitivity_button_down"]
+[connection signal="pressed" from="Sensitivity/autoApply" to="." method="_on_auto_apply_pressed"]
+[connection signal="pressed" from="Screen/ExclusiveFullscreen" to="." method="_on_exclusive_fullscreen_pressed"]
+[connection signal="pressed" from="Screen/WindowFullscreen" to="." method="_on_window_fullscreen_pressed"]
+[connection signal="pressed" from="Screen/Windowed" to="." method="_on_windowed_pressed"]
+[connection signal="pressed" from="Screen/VSync" to="." method="_on_vsync_pressed"]
+[connection signal="value_changed" from="MaxFps/SpinFps" to="." method="_on_spin_fps_value_changed"]
+[connection signal="value_changed" from="Volume/SpinVolume" to="." method="_volume_value_changed"]
+[connection signal="value_changed" from="Volume/HScrollVolume" to="." method="_volume_value_changed"]
+[connection signal="pressed" from="Volume/testSound" to="." method="_on_test_sound_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]

@@ -5,7 +5,10 @@ const max_view : float = PI/2
 
 var mouse_rotation : Vector2 = Vector2.ZERO
 
-const JUMP_VELOCITY : int = 5
+var JUMP_VELOCITY : int = 5
+var MAX_SPEED : float = 5.0
+var TOTAL_SPEED = MAX_SPEED
+var SPEED_UP : float = 2
 
 var gravity : float = ProjectSettings.get_setting("physics/3d/default_gravity")
 
@@ -27,15 +30,6 @@ func _ready():
 	
 	var window_size = DisplayServer.window_get_size()
 	last_mouse_position = window_size/2
-	
-	await MainNode.ready
-	print_debug(MainNode.load_bus)
-	var bus_count = AudioServer.get_bus_count()
-	print_debug("Общее количество шин: ", bus_count)
-	%SnowWalk.bus = "snow"
-	
-	global_position = %StartPosition.global_position
-	#global_position = %EscapePosition.global_position
 
 
 
@@ -60,7 +54,8 @@ var check_on_floor2
 var escape : bool = false
 
 func _physics_process(delta):
-		
+	TOTAL_SPEED = MAX_SPEED
+
 	if Input.is_action_just_pressed("left_mouse_button_click"):
 		var collider
 		if !show_cursor:
@@ -150,9 +145,6 @@ func _physics_process(delta):
 		#print_debug("приземление")
 		snow_walk.play()
 	
-	var SPEED : float = 5.0
-	const SPEED_UP : float = 2
-	
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 
@@ -160,22 +152,22 @@ func _physics_process(delta):
 		velocity.y = JUMP_VELOCITY
 	
 	if Input.is_action_pressed("shift"):
-		SPEED *= SPEED_UP
+		TOTAL_SPEED *= SPEED_UP
 	
 	if can_move:
 		var input_dir : Vector2 = Input.get_vector("a", "d", "w", "s")
 		var direction : Vector3 = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 		if direction:
-			velocity.x = direction.x * SPEED
-			velocity.z = direction.z * SPEED
+			velocity.x = direction.x * TOTAL_SPEED
+			velocity.z = direction.z * TOTAL_SPEED
 			if is_on_floor():
 				if !snow_walk.playing:
 					if snow_timer.is_stopped():
 						snow_timer.start()
 						snow_walk.play()
 		else:
-			velocity.x = move_toward(velocity.x, 0, SPEED)
-			velocity.z = move_toward(velocity.z, 0, SPEED)
+			velocity.x = move_toward(velocity.x, 0, TOTAL_SPEED)
+			velocity.z = move_toward(velocity.z, 0, TOTAL_SPEED)
 		move_and_slide()
 	
 	transform.basis = Basis.from_euler(Vector3(0.0, mouse_rotation.y, 0.0))
