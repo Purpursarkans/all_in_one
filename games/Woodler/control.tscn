@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bjs8oxs6clnfh"]
+[gd_scene load_steps=16 format=3 uid="uid://b65ocvq4eg3p7"]
 
 [ext_resource type="Script" uid="uid://1t18i5tqlymc" path="res://games/HarvestWood/control.gd" id="1_260xq"]
 [ext_resource type="SystemFont" uid="uid://bpi05ko24khtx" path="res://new_system_font.tres" id="2_v8t2n"]

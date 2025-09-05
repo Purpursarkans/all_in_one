@@ -1,4 +1,4 @@
-[gd_scene load_steps=80 format=3 uid="uid://ccgpl64wyp7ai"]
+[gd_scene load_steps=79 format=3 uid="uid://djxqorheyott"]
 
 [ext_resource type="Script" uid="uid://cp7hqhytycb5y" path="res://games/HarvestWood/harvest_wood.gd" id="1_6cp6b"]
 [ext_resource type="AudioBusLayout" uid="uid://bmpruuq2ta05c" path="res://games/HarvestWood/HarvestWood_bus_layout.tres" id="2_hspbi"]
@@ -8,28 +8,28 @@
 [ext_resource type="Texture2D" uid="uid://cbe1a4ambbdd1" path="res://textures/ CC BY 3.0/snow/tomek/snow7_local.jpg" id="6_k4la6"]
 [ext_resource type="Script" uid="uid://n1tgb4aohspo" path="res://games/HarvestWood/player.gd" id="7_py3ox"]
 [ext_resource type="Texture2D" uid="uid://cmwg6owdj7k2i" path="res://textures/CC0 1.0 Universal/Dark Wood/Holz Dark Seamless.jpg" id="8_t5ayy"]
-[ext_resource type="Script" uid="uid://dhal1lummxvqt" path="res://scripts/color_rect.gd" id="9_1214y"]
+[ext_resource type="Script" uid="uid://dhal1lummxvqt" path="res://games/HarvestWood/color_rect.gd" id="9_1214y"]
 [ext_resource type="AudioStream" uid="uid://bmctjyciwopfr" path="res://sound/CC0 1.0 Universal/Footsteps in the snow 4/676545__rthijs__footsteps-in-the-snow-4-1.ogg" id="10_3aglq"]
 [ext_resource type="AudioStream" uid="uid://ci86wv2jjn3dk" path="res://sound/CC0 1.0 Universal/Footsteps in the snow 4/676545__rthijs__footsteps-in-the-snow-4-2.ogg" id="11_v1ln1"]
 [ext_resource type="AudioStream" uid="uid://drf358a4xexec" path="res://sound/CC0 1.0 Universal/Footsteps in the snow 4/676545__rthijs__footsteps-in-the-snow-4-3.ogg" id="12_osx6g"]
 [ext_resource type="AudioStream" uid="uid://1e2xfpn6uox0" path="res://sound/CC0 1.0 Universal/Footsteps in the snow 4/676545__rthijs__footsteps-in-the-snow-4-4.ogg" id="13_bmlnt"]
 [ext_resource type="AudioStream" uid="uid://b4jktspbqhy28" path="res://sound/CC BY 3.0/Menu Selection Click/Menu Selection Click.wav" id="14_kjith"]
-[ext_resource type="Script" uid="uid://7wahimxao25q" path="res://scripts/gui.gd" id="15_i30r2"]
+[ext_resource type="Script" uid="uid://7wahimxao25q" path="res://games/HarvestWood/gui.gd" id="15_i30r2"]
 [ext_resource type="Texture2D" uid="uid://cg4u2aodkvqmy" path="res://icon.svg" id="16_cwdi6"]
-[ext_resource type="Script" uid="uid://dq7gl4tmcn7rp" path="res://scripts/eye.gd" id="17_hl2t7"]
+[ext_resource type="Script" uid="uid://dq7gl4tmcn7rp" path="res://games/HarvestWood/eye.gd" id="17_hl2t7"]
 [ext_resource type="AudioStream" uid="uid://cx75ulqwhq28n" path="res://sound/Attribution 4.0 International/Dropping, Wood/352175__inspectorj__dropping-wood-l.ogg" id="18_lb85p"]
 [ext_resource type="AudioStream" uid="uid://lheq05gvtr6j" path="res://sound/Attribution 4.0 International/Wooden log falling/161592__jorickhoofd__wooden-log-falling.wav" id="19_068r7"]
 [ext_resource type="AudioStream" uid="uid://toqg5hefuam" path="res://sound/CC0 1.0 Universal/Picking up a log from a pile/801813__sadiquecat__picking-up-a-log-from-a-pile-xy.wav" id="20_sgape"]
 [ext_resource type="PackedScene" uid="uid://ss34e3i1oghs" path="res://scenes/woodLogCampfire.tscn" id="21_q4bu6"]
-[ext_resource type="Script" uid="uid://tecgwyk3a3ot" path="res://scripts/campfire_static_body_3d.gd" id="22_wyku8"]
-[ext_resource type="Script" uid="uid://dgbn7fcs5g5hu" path="res://scripts/fuel_bar.gd" id="23_ntjac"]
+[ext_resource type="Script" uid="uid://tecgwyk3a3ot" path="res://games/HarvestWood/campfire_static_body_3d.gd" id="22_wyku8"]
+[ext_resource type="Script" uid="uid://dgbn7fcs5g5hu" path="res://games/HarvestWood/fuel_bar.gd" id="23_ntjac"]
 [ext_resource type="PackedScene" uid="uid://ncrpi2p3jiow" path="res://games/HarvestWood/fuelBar.tscn" id="24_26hhm"]
-[ext_resource type="Script" uid="uid://paws6i0pka5v" path="res://scripts/wood_spawner.gd" id="25_e2nt3"]
+[ext_resource type="Script" uid="uid://paws6i0pka5v" path="res://games/HarvestWood/wood_spawner.gd" id="25_e2nt3"]
 [ext_resource type="AudioStream" uid="uid://bx0v6jsh62r7l" path="res://sound/CC0 1.0 Universal/SFX_wood_fall_pile_bunch_stone_floor/PickUpLog.ogg" id="26_2ypmj"]
 [ext_resource type="PackedScene" uid="uid://bx7k7jxwisjld" path="res://scenes/wood_log.tscn" id="27_pirmv"]
 [ext_resource type="SystemFont" uid="uid://bpi05ko24khtx" path="res://new_system_font.tres" id="28_7hhpu"]
-[ext_resource type="Script" uid="uid://bf3ybt6166boj" path="res://scripts/exit_static.gd" id="29_vu6i6"]
-[ext_resource type="Script" uid="uid://b0keqlcdfbidp" path="res://scripts/start_static.gd" id="30_oalxg"]
+[ext_resource type="Script" uid="uid://bf3ybt6166boj" path="res://games/HarvestWood/exit_static.gd" id="29_vu6i6"]
+[ext_resource type="Script" uid="uid://b0keqlcdfbidp" path="res://games/HarvestWood/start_static.gd" id="30_oalxg"]
 [ext_resource type="PackedScene" uid="uid://c01oh5ddve7il" path="res://games/HarvestWood/control.tscn" id="31_tccis"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fakw2"]
@@ -174,10 +174,6 @@ data = PackedVector3Array(0.5, -0.5, 0, -0.5, -0.5, 0, 0.5, 0.5, 0, -0.5, -0.5, 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_yc65k"]
 data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
 
-[sub_resource type="SystemFont" id="SystemFont_pae8t"]
-font_names = PackedStringArray("Monocraft")
-multichannel_signed_distance_field = true
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0pxkp"]
 albedo_color = Color(0.244776, 0.244776, 0.244776, 1)
 
@@ -213,7 +209,7 @@ viewport_path = NodePath("EscapeMenu/GUI/guiBody3D/guiDisplay/SubViewport")
 
 [sub_resource type="MultiMesh" id="MultiMesh_ms256"]
 
-[node name="Woodler" type="Node3D"]
+[node name="HarvestWood" type="Node3D"]
 script = ExtResource("1_6cp6b")
 ExportResourses = Array[Resource]([ExtResource("2_hspbi")])
 
@@ -642,18 +638,6 @@ shape = SubResource("ConcavePolygonShape3D_yc65k")
 
 [node name="StartPosition" type="Node3D" parent="Start"]
 unique_name_in_owner = true
-
-[node name="GameName" type="Label3D" parent="Start"]
-transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 0, 3, 4.09402)
-pixel_size = 0.02
-text = "Woodler"
-font = SubResource("SystemFont_pae8t")
-
-[node name="GameName2" type="Label3D" parent="Start"]
-transform = Transform3D(1, 0, -6.3573e-08, 0, 1, 0, 6.3573e-08, 0, 1, 0, 3, -5.90598)
-pixel_size = 0.02
-text = "Woodler"
-font = SubResource("SystemFont_pae8t")
 
 [node name="EscapeMenu" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.29229, -28.105, 97.658)

@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://cmwg6owdj7k2i" path="res://textures/CC0 1.0 Universal/Dark Wood/Holz Dark Seamless.jpg" id="1_7k2wp"]
 [ext_resource type="Shader" uid="uid://drpk7lx8k7e16" path="res://shader/HarvestWood.tres" id="2_htgx6"]
-[ext_resource type="Script" uid="uid://bngxdphr26n3k" path="res://scripts/wood_log.gd" id="2_pfutm"]
-[ext_resource type="Script" uid="uid://d3aeuigtxdhep" path="res://scripts/wood_log_static.gd" id="3_7dn70"]
+[ext_resource type="Script" uid="uid://bngxdphr26n3k" path="res://games/HarvestWood/wood_log.gd" id="2_pfutm"]
+[ext_resource type="Script" uid="uid://d3aeuigtxdhep" path="res://games/HarvestWood/wood_log_static.gd" id="3_7dn70"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_o13wr"]
 render_priority = 0
