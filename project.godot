@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="allinone"
-run/main_scene="uid://ca8qtea2dvucc"
+run/main_scene="uid://djxqorheyott"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 run/max_fps=90
 config/icon="res://icon.svg"

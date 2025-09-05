@@ -12,7 +12,7 @@ func _process(delta: float) -> void:
 	pass
 
 func left_click():
-	$"/root/HarvestWood".start = true
+	$"/root/HWoodler".start = true
 	%CampfireStaticBody3D.process_mode = Node.PROCESS_MODE_INHERIT
 	player.global_position = %StartGamePosition.global_position
 	

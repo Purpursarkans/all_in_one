@@ -1,6 +1,6 @@
 extends Node3D
 
-#const HARVEST_WOOD_BUS_LAYOUT : AudioBusLayout = preload("uid://bmpruuq2ta05c")
+#const Woodler_BUS_LAYOUT : AudioBusLayout = preload("uid://bmpruuq2ta05c")
 # Called when the node enters the scene tree for the first time.
 
 #@onready var test = get_node("uid://bmpruuq2ta05c")

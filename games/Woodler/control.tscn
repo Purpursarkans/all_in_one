@@ -1,8 +1,8 @@
 [gd_scene load_steps=16 format=3 uid="uid://b65ocvq4eg3p7"]
 
-[ext_resource type="Script" uid="uid://1t18i5tqlymc" path="res://games/HarvestWood/control.gd" id="1_260xq"]
+[ext_resource type="Script" uid="uid://1t18i5tqlymc" path="res://games/Woodler/control.gd" id="1_260xq"]
 [ext_resource type="SystemFont" uid="uid://bpi05ko24khtx" path="res://new_system_font.tres" id="2_v8t2n"]
-[ext_resource type="ButtonGroup" uid="uid://d27t08357rn0u" path="res://games/HarvestWood/ScreenButtonGroups.tres" id="3_s013t"]
+[ext_resource type="ButtonGroup" uid="uid://d27t08357rn0u" path="res://games/Woodler/ScreenButtonGroups.tres" id="3_s013t"]
 [ext_resource type="AudioStream" uid="uid://b4jktspbqhy28" path="res://sound/CC BY 3.0/Menu Selection Click/Menu Selection Click.wav" id="4_t1e50"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_bansd"]

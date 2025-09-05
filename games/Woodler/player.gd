@@ -11,5 +11,5 @@ func _ready():
 	print_debug("Общее количество шин: ", bus_count)
 	%SnowWalk.bus = "snow"
 	
-	global_position = %StartPosition.global_position
+	#global_position = %StartPosition.global_position
 	#global_position = %EscapePosition.global_position

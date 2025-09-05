@@ -1,12 +1,12 @@
-[gd_scene load_steps=79 format=3 uid="uid://djxqorheyott"]
+[gd_scene load_steps=64 format=3 uid="uid://djxqorheyott"]
 
-[ext_resource type="Script" uid="uid://cp7hqhytycb5y" path="res://games/HarvestWood/harvest_wood.gd" id="1_6cp6b"]
-[ext_resource type="AudioBusLayout" uid="uid://bmpruuq2ta05c" path="res://games/HarvestWood/HarvestWood_bus_layout.tres" id="2_hspbi"]
+[ext_resource type="Script" uid="uid://bmewflx0i87re" path="res://games/Woodler/Woodler.gd" id="1_vdhhy"]
+[ext_resource type="AudioBusLayout" uid="uid://cioxg7jobu8qx" path="res://games/Woodler/Woodler_bus_layout.tres" id="2_ghxcq"]
 [ext_resource type="Texture2D" uid="uid://dr0mlb3j8sdrq" path="res://textures/ CC BY 3.0/snow/tomek/snow7_d.jpg" id="3_cwkjc"]
 [ext_resource type="Texture2D" uid="uid://c8i1w03clilic" path="res://textures/ CC BY 3.0/snow/tomek/snow7_s.jpg" id="4_bsemo"]
 [ext_resource type="Texture2D" uid="uid://bnuvbif50utlh" path="res://textures/ CC BY 3.0/snow/tomek/snow7_h.jpg" id="5_ptukg"]
 [ext_resource type="Texture2D" uid="uid://cbe1a4ambbdd1" path="res://textures/ CC BY 3.0/snow/tomek/snow7_local.jpg" id="6_k4la6"]
-[ext_resource type="Script" uid="uid://n1tgb4aohspo" path="res://games/HarvestWood/player.gd" id="7_py3ox"]
+[ext_resource type="Script" uid="uid://b5sckpkjvp7jl" path="res://games/Woodler/player.gd" id="7_m151n"]
 [ext_resource type="Texture2D" uid="uid://cmwg6owdj7k2i" path="res://textures/CC0 1.0 Universal/Dark Wood/Holz Dark Seamless.jpg" id="8_t5ayy"]
 [ext_resource type="Script" uid="uid://dhal1lummxvqt" path="res://games/HarvestWood/color_rect.gd" id="9_1214y"]
 [ext_resource type="AudioStream" uid="uid://bmctjyciwopfr" path="res://sound/CC0 1.0 Universal/Footsteps in the snow 4/676545__rthijs__footsteps-in-the-snow-4-1.ogg" id="10_3aglq"]
@@ -14,6 +14,7 @@
 [ext_resource type="AudioStream" uid="uid://drf358a4xexec" path="res://sound/CC0 1.0 Universal/Footsteps in the snow 4/676545__rthijs__footsteps-in-the-snow-4-3.ogg" id="12_osx6g"]
 [ext_resource type="AudioStream" uid="uid://1e2xfpn6uox0" path="res://sound/CC0 1.0 Universal/Footsteps in the snow 4/676545__rthijs__footsteps-in-the-snow-4-4.ogg" id="13_bmlnt"]
 [ext_resource type="AudioStream" uid="uid://b4jktspbqhy28" path="res://sound/CC BY 3.0/Menu Selection Click/Menu Selection Click.wav" id="14_kjith"]
+[ext_resource type="Script" uid="uid://mqw6ia5tvjl4" path="res://games/Woodler/gui.gd" id="14_m151n"]
 [ext_resource type="Script" uid="uid://7wahimxao25q" path="res://games/HarvestWood/gui.gd" id="15_i30r2"]
 [ext_resource type="Texture2D" uid="uid://cg4u2aodkvqmy" path="res://icon.svg" id="16_cwdi6"]
 [ext_resource type="Script" uid="uid://dq7gl4tmcn7rp" path="res://games/HarvestWood/eye.gd" id="17_hl2t7"]
@@ -21,15 +22,11 @@
 [ext_resource type="AudioStream" uid="uid://lheq05gvtr6j" path="res://sound/Attribution 4.0 International/Wooden log falling/161592__jorickhoofd__wooden-log-falling.wav" id="19_068r7"]
 [ext_resource type="AudioStream" uid="uid://toqg5hefuam" path="res://sound/CC0 1.0 Universal/Picking up a log from a pile/801813__sadiquecat__picking-up-a-log-from-a-pile-xy.wav" id="20_sgape"]
 [ext_resource type="PackedScene" uid="uid://ss34e3i1oghs" path="res://scenes/woodLogCampfire.tscn" id="21_q4bu6"]
-[ext_resource type="Script" uid="uid://tecgwyk3a3ot" path="res://games/HarvestWood/campfire_static_body_3d.gd" id="22_wyku8"]
-[ext_resource type="Script" uid="uid://dgbn7fcs5g5hu" path="res://games/HarvestWood/fuel_bar.gd" id="23_ntjac"]
-[ext_resource type="PackedScene" uid="uid://ncrpi2p3jiow" path="res://games/HarvestWood/fuelBar.tscn" id="24_26hhm"]
-[ext_resource type="Script" uid="uid://paws6i0pka5v" path="res://games/HarvestWood/wood_spawner.gd" id="25_e2nt3"]
+[ext_resource type="Script" uid="uid://d174uq18lg2rp" path="res://games/Woodler/campfire_static_body_3d.gd" id="22_m151n"]
+[ext_resource type="Script" uid="uid://cen3u4qcahul5" path="res://games/Woodler/wood_spawner.gd" id="23_m151n"]
+[ext_resource type="PackedScene" uid="uid://bbh6u0qdpx44r" path="res://games/Woodler/scenes/wood_log.tscn" id="24_xwsjo"]
 [ext_resource type="AudioStream" uid="uid://bx0v6jsh62r7l" path="res://sound/CC0 1.0 Universal/SFX_wood_fall_pile_bunch_stone_floor/PickUpLog.ogg" id="26_2ypmj"]
-[ext_resource type="PackedScene" uid="uid://bx7k7jxwisjld" path="res://scenes/wood_log.tscn" id="27_pirmv"]
 [ext_resource type="SystemFont" uid="uid://bpi05ko24khtx" path="res://new_system_font.tres" id="28_7hhpu"]
-[ext_resource type="Script" uid="uid://bf3ybt6166boj" path="res://games/HarvestWood/exit_static.gd" id="29_vu6i6"]
-[ext_resource type="Script" uid="uid://b0keqlcdfbidp" path="res://games/HarvestWood/start_static.gd" id="30_oalxg"]
 [ext_resource type="PackedScene" uid="uid://c01oh5ddve7il" path="res://games/HarvestWood/control.tscn" id="31_tccis"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fakw2"]
@@ -137,43 +134,6 @@ material = SubResource("StandardMaterial3D_ms256")
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_s1ey0"]
 data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_m10c1"]
-viewport_path = NodePath("Campfire/FuelBar/Sprite3D/SubViewport")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yc65k"]
-albedo_texture = ExtResource("8_t5ayy")
-
-[sub_resource type="Curve" id="Curve_qg2yc"]
-_data = [Vector2(0, 0.876405), 0.0, 0.0, 0, 0, Vector2(0.0651163, 1), 0.0, 0.0, 0, 0, Vector2(0.553488, 1), 0.0, 0.0, 0, 0, Vector2(0.897674, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.853933), 0.0, 0.0, 0, 0]
-point_count = 5
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n787f"]
-albedo_color = Color(0.34989, 0.159557, 0.00142558, 1)
-
-[sub_resource type="TubeTrailMesh" id="TubeTrailMesh_eo0lw"]
-material = SubResource("StandardMaterial3D_n787f")
-radial_steps = 6
-curve = SubResource("Curve_qg2yc")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w6b45"]
-albedo_texture = ExtResource("3_cwkjc")
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_33vyi"]
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_y62wd"]
-data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oiv06"]
-
-[sub_resource type="QuadMesh" id="QuadMesh_r2bax"]
-material = SubResource("StandardMaterial3D_oiv06")
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_7mjhk"]
-data = PackedVector3Array(0.5, -0.5, 0, -0.5, -0.5, 0, 0.5, 0.5, 0, -0.5, -0.5, 0, -0.5, 0.5, 0, 0.5, 0.5, 0)
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_yc65k"]
-data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0pxkp"]
 albedo_color = Color(0.244776, 0.244776, 0.244776, 1)
 
@@ -209,9 +169,9 @@ viewport_path = NodePath("EscapeMenu/GUI/guiBody3D/guiDisplay/SubViewport")
 
 [sub_resource type="MultiMesh" id="MultiMesh_ms256"]
 
-[node name="HarvestWood" type="Node3D"]
-script = ExtResource("1_6cp6b")
-ExportResourses = Array[Resource]([ExtResource("2_hspbi")])
+[node name="Woodler" type="Node3D"]
+script = ExtResource("1_vdhhy")
+ExportResourses = Array[Resource]([ExtResource("2_ghxcq")])
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -0.500003, 0.749999, -0.43301, 0, 0, 0)
@@ -235,8 +195,8 @@ unique_name_in_owner = true
 
 [node name="Player" type="CharacterBody3D" parent="." node_paths=PackedStringArray("MainNode")]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20.5, 0)
-script = ExtResource("7_py3ox")
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0.5, 0)
+script = ExtResource("7_m151n")
 MainNode = NodePath("..")
 
 [node name="WoodLog" type="MeshInstance3D" parent="Player"]
@@ -305,7 +265,7 @@ stream = ExtResource("14_kjith")
 
 [node name="godotGUI" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.31096, 21.6502, 0.203735)
-script = ExtResource("15_i30r2")
+script = ExtResource("14_m151n")
 
 [node name="Sprite3D" type="Sprite3D" parent="godotGUI"]
 alpha_cut = 1
@@ -392,251 +352,30 @@ draw_pass_1 = SubResource("SphereMesh_cecup")
 
 [node name="CampfireStaticBody3D" type="StaticBody3D" parent="Campfire"]
 unique_name_in_owner = true
-process_mode = 4
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
 collision_layer = 2
 collision_mask = 2
-script = ExtResource("22_wyku8")
+script = ExtResource("22_m151n")
 metadata/left_click = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Campfire/CampfireStaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_s1ey0")
 
-[node name="FuelBar" type="Node3D" parent="Campfire"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.70154, 1, -2.4159)
-script = ExtResource("23_ntjac")
-
-[node name="Sprite3D" type="Sprite3D" parent="Campfire/FuelBar"]
-transform = Transform3D(-0.37166, 0, -8.74228e-08, 0, 0.128243, 0, 3.24915e-08, 0, -1, 0, 0, 0)
-double_sided = false
-texture = SubResource("ViewportTexture_m10c1")
-
-[node name="SubViewport" type="SubViewport" parent="Campfire/FuelBar/Sprite3D"]
-transparent_bg = true
-
-[node name="fuelBar" parent="Campfire/FuelBar/Sprite3D/SubViewport" instance=ExtResource("24_26hhm")]
-unique_name_in_owner = true
-
 [node name="WoodSpawner" type="Node3D" parent="." node_paths=PackedStringArray("player")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
-script = ExtResource("25_e2nt3")
+script = ExtResource("23_m151n")
 player = NodePath("../Player")
-step = 1
+
+[node name="WoodLog" parent="WoodSpawner" node_paths=PackedStringArray("player", "spawner") instance=ExtResource("24_xwsjo")]
+player = NodePath("../../Player")
+spawner = NodePath("..")
 
 [node name="PickUpLog" type="AudioStreamPlayer" parent="WoodSpawner"]
 unique_name_in_owner = true
 stream = ExtResource("26_2ypmj")
 volume_db = -2.0
 
-[node name="WoodLog" parent="WoodSpawner" node_paths=PackedStringArray("player", "spawner") instance=ExtResource("27_pirmv")]
-transform = Transform3D(0.455449, -0.92462, 1.38384e-08, 0, -7.08111e-08, -0.554672, 0.316587, 1.33018, -1.99083e-08, 0.445411, 1.90735e-06, -2.78797)
-material_override = SubResource("StandardMaterial3D_yc65k")
-mesh = SubResource("TubeTrailMesh_eo0lw")
-player = NodePath("../../Player")
-spawner = NodePath("..")
-
-[node name="GameOver" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -26.9498, 0)
-
-[node name="GameOverPosition" type="Node3D" parent="GameOver"]
-unique_name_in_owner = true
-
-[node name="Floor" type="MeshInstance3D" parent="GameOver"]
-transform = Transform3D(21.5212, 0, 0, 0, 21.5212, 0, 0, 0, 21.5212, 0, 0, 0)
-material_override = SubResource("StandardMaterial3D_w6b45")
-mesh = SubResource("PlaneMesh_33vyi")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="GameOver/Floor"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="GameOver/Floor/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_y62wd")
-
-[node name="GameOver" type="Label3D" parent="GameOver"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.01868, -5.81108)
-pixel_size = 0.023
-text = "Game Over :c"
-font = ExtResource("28_7hhpu")
-
-[node name="Time" type="Label3D" parent="GameOver"]
-unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.01868, -5.81108)
-pixel_size = 0.023
-text = "you time: 0"
-font = ExtResource("28_7hhpu")
-
-[node name="GameOver2" type="Label3D" parent="GameOver"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 3.01868, 4.18892)
-pixel_size = 0.023
-text = "Game Over :c"
-font = ExtResource("28_7hhpu")
-
-[node name="Time2" type="Label3D" parent="GameOver"]
-unique_name_in_owner = true
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 2.01868, 4.18892)
-pixel_size = 0.023
-text = "you time: 0"
-font = ExtResource("28_7hhpu")
-
-[node name="Walls" type="Node3D" parent="GameOver"]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="GameOver/Walls"]
-transform = Transform3D(39.5317, 0, 0, 0, 39.5317, 0, 0, 0, 39.5317, 0, -3.92727, -20)
-mesh = SubResource("QuadMesh_r2bax")
-skeleton = NodePath("../..")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="GameOver/Walls/MeshInstance3D"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="GameOver/Walls/MeshInstance3D/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_7mjhk")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="GameOver/Walls"]
-transform = Transform3D(-1.72798e-06, 0, 39.5317, 0, 39.5317, 0, -39.5317, 0, -1.72798e-06, -17, -3.92727, 0)
-mesh = SubResource("QuadMesh_r2bax")
-skeleton = NodePath("../..")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="GameOver/Walls/MeshInstance3D2"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="GameOver/Walls/MeshInstance3D2/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_7mjhk")
-
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="GameOver/Walls"]
-transform = Transform3D(-39.5317, 0, -3.45597e-06, 0, 39.5317, 0, 3.45597e-06, 0, -39.5317, -1, -3.92727, 16)
-mesh = SubResource("QuadMesh_r2bax")
-skeleton = NodePath("../..")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="GameOver/Walls/MeshInstance3D3"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="GameOver/Walls/MeshInstance3D3/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_7mjhk")
-
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="GameOver/Walls"]
-transform = Transform3D(5.18395e-06, 0, -39.5317, 0, 39.5317, 0, 39.5317, 0, 5.18395e-06, 17, -3.92727, -2)
-mesh = SubResource("QuadMesh_r2bax")
-skeleton = NodePath("../..")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="GameOver/Walls/MeshInstance3D4"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="GameOver/Walls/MeshInstance3D4/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_7mjhk")
-
-[node name="Exit" type="Node3D" parent="GameOver"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 4.17359)
-
-[node name="Label3D" type="Label3D" parent="GameOver/Exit"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
-pixel_size = 0.02
-text = "Exit"
-font = ExtResource("28_7hhpu")
-
-[node name="ExitStatic" type="StaticBody3D" parent="GameOver/Exit"]
-transform = Transform3D(1.32916, 0, 0, 0, 0.613055, 0, 0, 0, 0.259289, 0, 0, 0)
-script = ExtResource("29_vu6i6")
-metadata/left_click = true
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="GameOver/Exit/ExitStatic"]
-shape = SubResource("ConcavePolygonShape3D_yc65k")
-
-[node name="Exit2" type="Node3D" parent="GameOver"]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 1, -5.82641)
-
-[node name="Label3D" type="Label3D" parent="GameOver/Exit2"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
-pixel_size = 0.02
-text = "Exit"
-font = ExtResource("28_7hhpu")
-
-[node name="ExitStatic" type="StaticBody3D" parent="GameOver/Exit2"]
-transform = Transform3D(1.32916, 0, 0, 0, 0.613055, 0, 0, 0, 0.259289, 0, 0, 0)
-script = ExtResource("29_vu6i6")
-metadata/left_click = true
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="GameOver/Exit2/ExitStatic"]
-shape = SubResource("ConcavePolygonShape3D_yc65k")
-
 [node name="StartGamePosition" type="Node3D" parent="."]
-unique_name_in_owner = true
-
-[node name="Start" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20, 0)
-
-[node name="Floor2" type="StaticBody3D" parent="Start"]
-transform = Transform3D(21.5212, 0, 0, 0, 21.5212, 0, 0, 0, 21.5212, 0, 0, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Start/Floor2"]
-shape = SubResource("ConcavePolygonShape3D_y62wd")
-
-[node name="Walls" type="Node3D" parent="Start"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 23, 0)
-
-[node name="StaticBody3D4" type="StaticBody3D" parent="Start/Walls"]
-transform = Transform3D(-39.5317, 0, -3.45597e-06, 0, 39.5317, 0, 3.45597e-06, 0, -39.5317, -1, -3.92727, 16)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Start/Walls/StaticBody3D4"]
-shape = SubResource("ConcavePolygonShape3D_7mjhk")
-
-[node name="StaticBody3D3" type="StaticBody3D" parent="Start/Walls"]
-transform = Transform3D(-1.72798e-06, 0, 39.5317, 0, 39.5317, 0, -39.5317, 0, -1.72798e-06, -17, -3.92727, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Start/Walls/StaticBody3D3"]
-shape = SubResource("ConcavePolygonShape3D_7mjhk")
-
-[node name="StaticBody3D2" type="StaticBody3D" parent="Start/Walls"]
-transform = Transform3D(39.5317, 0, 0, 0, 39.5317, 0, 0, 0, 39.5317, 0, -3.92727, -20)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Start/Walls/StaticBody3D2"]
-shape = SubResource("ConcavePolygonShape3D_7mjhk")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Start/Walls"]
-transform = Transform3D(5.18395e-06, 0, -39.5317, 0, 39.5317, 0, 39.5317, 0, 5.18395e-06, 17, -3.92727, -2)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Start/Walls/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_7mjhk")
-
-[node name="Start" type="Node3D" parent="Start"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 4.17359)
-
-[node name="EscToSettings" type="Label3D" parent="Start/Start"]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0.544716, -0.0165796)
-text = "Esc to settings"
-font = ExtResource("28_7hhpu")
-
-[node name="Label3D" type="Label3D" parent="Start/Start"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
-pixel_size = 0.02
-text = "Start"
-font = ExtResource("28_7hhpu")
-
-[node name="StartStatic" type="StaticBody3D" parent="Start/Start"]
-transform = Transform3D(1.32916, 0, 0, 0, 0.613055, 0, 0, 0, 0.259289, 0, 0, 0)
-script = ExtResource("30_oalxg")
-metadata/left_click = true
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Start/Start/StartStatic"]
-shape = SubResource("ConcavePolygonShape3D_yc65k")
-
-[node name="Start2" type="Node3D" parent="Start"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1, -5.82641)
-
-[node name="EscToSettings" type="Label3D" parent="Start/Start2"]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0.544716, -0.0165796)
-text = "Esc to settings"
-font = ExtResource("28_7hhpu")
-
-[node name="Label3D" type="Label3D" parent="Start/Start2"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
-pixel_size = 0.02
-text = "Start"
-font = ExtResource("28_7hhpu")
-
-[node name="StartStatic" type="StaticBody3D" parent="Start/Start2"]
-transform = Transform3D(1.32916, 0, 0, 0, 0.613055, 0, 0, 0, 0.259289, 0, 0, 0)
-script = ExtResource("30_oalxg")
-metadata/left_click = true
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Start/Start2/StartStatic"]
-shape = SubResource("ConcavePolygonShape3D_yc65k")
-
-[node name="StartPosition" type="Node3D" parent="Start"]
 unique_name_in_owner = true
 
 [node name="EscapeMenu" type="Node3D" parent="."]
